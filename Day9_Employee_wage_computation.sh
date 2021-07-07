@@ -6,3 +6,8 @@ then
 else
 	echo "Employee Present"
 fi
+
+#calculation of daily wage
+perhour_wage=20
+num_of_hours=8
+echo "Daily employee wage is $(( employee_attendace * perhour_wage * num_of_hours ))"
