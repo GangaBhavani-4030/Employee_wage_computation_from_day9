@@ -11,3 +11,23 @@ fi
 perhour_wage=20
 num_of_hours=8
 echo "Daily employee wage is $(( employee_attendace * perhour_wage * num_of_hours ))"
+
+
+#Adding _Part_time_Employee_and_Wage
+employee_attendace=$(( RANDOM % 3 ))
+if(( employee_attendace  == 0 ))
+then
+	echo "employee Absent"
+	num_of_hours=0
+elif(( employee_attendace == 1 ))
+then
+	echo "employee present full time"
+	num_of_hours=8
+else
+	echo "employee is part time"
+	num_of_hours=4
+fi
+
+perhour_wage=20
+perday_wage=$(( perhour_wage * num_of_hours ))
+echo "daily wage of employee is $perday_wage "
