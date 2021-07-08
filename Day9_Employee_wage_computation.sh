@@ -31,3 +31,17 @@ fi
 perhour_wage=20
 perday_wage=$(( perhour_wage * num_of_hours ))
 echo "daily wage of employee is $perday_wage "
+
+
+#solving using switch case
+case employee_attendance in
+	0) echo "employee is absent"
+	   no_ofhours_per_day=0 ;;
+	1) echo "employee is full time present"
+	   no_ofhours_per_day=8 ;;
+	2) echo "employee is part time present"
+	   no_ofhours_per_day=4 ;;
+esac
+ 
+wage_per_hour=20
+wage_per_day=$(( wage_per_hour * no_ofhours_per_day ))
