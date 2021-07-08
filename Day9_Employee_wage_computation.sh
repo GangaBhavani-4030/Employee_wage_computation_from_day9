@@ -1,52 +1,21 @@
-echo "Welcome To The Employee Wage Computation Problem"
-employee_attendance=$(( RANDOM % 2 ))
-if(( employee_attendance == 0 ))
-then
-	echo "Employee Absent"
-else
-	echo "Employee Present"
-fi
-
-#calculation of daily wage
-perhour_wage=20
-num_of_hours=8
-echo "Daily employee wage is $(( employee_attendace * perhour_wage * num_of_hours ))"
-
-
-#Adding _Part_time_Employee_and_Wage
-employee_attendace=$(( RANDOM % 3 ))
-if(( employee_attendace  == 0 ))
-then
-	echo "employee Absent"
-	num_of_hours=0
-elif(( employee_attendace == 1 ))
-then
-	echo "employee present full time"
-	num_of_hours=8
-else
-	echo "employee is part time"
-	num_of_hours=4
-fi
-
-perhour_wage=20
-perday_wage=$(( perhour_wage * num_of_hours ))
-echo "daily wage of employee is $perday_wage "
-
-
-#solving using switch case
-case employee_attendance in
-	0) echo "employee is absent"
-	   no_ofhours_per_day=0 ;;
-	1) echo "employee is full time present"
-	   no_ofhours_per_day=8 ;;
-	2) echo "employee is part time present"
-	   no_ofhours_per_day=4 ;;
-esac
- 
-wage_per_hour=20
-wage_per_day=$(( wage_per_hour * no_ofhours_per_day ))
-
-#calculating wages per month
-no_ofdays_per_month=20
-wage_per_month=$(( wage_per_day * no_ofdays_per_month ))
-echo "wage of the employee for month $wage_per_month"
+#Calculate Wages till a condition of total working hours or days is reached for a month
+per_hr_wage=20
+max_hrs=100
+max_days=20
+total_working_hours=0
+total_working_days=0
+while(( total_working_hours < max_hrs && total_working_Days < max_days ))
+do
+	(( total_working_days++ ))
+	employee_attendace=$(( RANDOM % 3 ))
+	case $employee_attendace in
+		0) echo " employee is absent"
+		   no.of.days=0 ;;
+		1) echo "employee full time present"
+		   no.of.days=8 ;;
+		2) echo"employee part time present"
+		   no.of.days=4 ;;
+	esac
+done
+totalsalary=$(( total_working_hours * per_hr_wage ))
+echo "total salary = $totalsalary"
