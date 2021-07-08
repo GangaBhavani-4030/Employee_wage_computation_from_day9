@@ -17,6 +17,8 @@ workinghours_intotal=0
 workingdays_intotal=0
 totalwage=0
 echo "total wage along with daily wage:"
+echo " Day         dailywage          totalwage"
+echo 
 while(( workinghours_intotal < maximumhours && workingdays_intotal < maximumdays ))
 do
 	(( workingdays_intotal++ ))
@@ -26,6 +28,7 @@ do
 	dailywage=$(( num_hours_perday * perhour_wage ))
 	(( totalwage += dailywage ))
 	wage[$totalwage]=$dailywage
+	echo "Day${workingdays_intotal} 	$totalwage	$dailywage"
 	echo "$totalwage       along with $dailywage "
 done
 
