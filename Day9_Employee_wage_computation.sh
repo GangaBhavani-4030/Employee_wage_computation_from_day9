@@ -45,3 +45,8 @@ esac
  
 wage_per_hour=20
 wage_per_day=$(( wage_per_hour * no_ofhours_per_day ))
+
+#calculating wages per month
+no_ofdays_per_month=20
+wage_per_month=$(( wage_per_day * no_ofdays_per_month ))
+echo "wage of the employee for month $wage_per_month"
